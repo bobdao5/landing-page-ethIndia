@@ -23,8 +23,8 @@ const index = () => {
       <ImageText
         src={img2}
         left={false}
-        title="Proof Of Community"
-        text="Mastering the knowledge of the known facts in tha application based learning environment."
+        title="Proof Of skill"
+        text="Mastering the knowledge of the known facts in the application based learning environment."
       />
       <ImageText
         src={img3}

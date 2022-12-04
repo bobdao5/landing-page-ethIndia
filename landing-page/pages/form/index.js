@@ -17,13 +17,14 @@ const index = () => {
 
   const changeHandler = (event) => {
     setSelectedFile(event.target.files[0]);
+    console.log(selectedFile);
   };
 
   const submitFormHandler = async (event) => {
     event.preventDefault();
 
     const response = await nftStorageHttpService.pinFileToIPFS(selectedFile);
-    console.log(response)
+    console.log(response);
 
     console.log("Registered!");
 
@@ -37,9 +38,8 @@ const index = () => {
 
     if (!enteredAge || !enteredName || !enteredInterests || !enteredSkillsets) {
       return alert("Enter Proper details!");
-
-      router.push("/profile");
     }
+    router.push("/profile");
   };
 
   const labelStyle =

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-// import { Chat } from "@pushprotocol/uiweb";
+import { Chat } from "@pushprotocol/uiweb";
 import {
   AiOutlineTwitter,
   AiFillInstagram,
@@ -56,13 +56,13 @@ const index = () => {
 
         <div className="flex-[0.45] py-8">
           <h2 className="font-semibold text-4xl text-white mb-2">
-            Aman Mandal
+            Krishna R
           </h2>
           <p className="text-gray-300 mb-6 text-xl">
             <span className="text-gray-100 font-semibold">#21232</span>
           </p>
           <p className="text-gray-400 text-2xl">
-            Xp Score - <span className="text-white">34/100</span>
+            Xp Score - <span className="text-white">84/100</span>
           </p>
 
           <div>
@@ -79,12 +79,12 @@ const index = () => {
 
           <div className="text-white text-2xl py-3 w-[90%] rounded-md text-center bg-black/10 backdrop-blur-md">
             Chat with Person! 😎
-            {/* <Chat
+            <Chat
               account="0x6430C47973FA053fc8F055e7935EC6C2271D5174" //user address
               supportAddress="0xd9c1CCAcD4B8a745e191b62BA3fcaD87229CB26d" //support address
               apiKey="jVPMCRom1B.iDRMswdehJG7NpHDiECIHwYMMv6k2KzkPJscFIDyW8TtSnk4blYnGa8DIkfuacU0"
               env="staging"
-            /> */}
+            />
           </div>
         </div>
 
