@@ -4,6 +4,8 @@ import imageHeader from "../../public/imageHeader.png";
 import { useContext } from "react";
 import { TransactionContext } from "../../context/TransactionContext";
 import Image from "next/image";
+import { connectWalletToSite } from "../../utils/wallet";
+// import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const Header = () => {
   const { connectWallet, currentAccount } = useContext(TransactionContext);
@@ -22,9 +24,13 @@ const Header = () => {
             crypto token on Ethereum Mainnet.
           </p> */}
 
+          {/* <ConnectButton /> */}
+
           {!currentAccount ? (
             <button
-              onClick={connectWallet}
+              onClick={async () => {
+                await connectWalletToSite();
+              }}
               className="w-[15rem] text-xl font-semibold bg-gradient-to-r text-transparent bg-clip-text from-[#FD42FB] via-[#CD9ECD] to-[#753FF3]  mt-14 bg-inherit border-gray-400 py-3 rounded-md border hover:scale-105 transition-all ease-in-out"
             >
               Connect Wallet
@@ -32,7 +38,7 @@ const Header = () => {
           ) : (
             <button className="w-[15rem] text-xl font-semibold bg-gradient-to-r text-transparent bg-clip-text from-[#FD42FB] via-[#CD9ECD] to-[#753FF3]  mt-14 bg-inherit border-gray-400 py-3 rounded-md border hover:scale-105 transition-all ease-in-out">
               Connected
-            </button>
+            </button> 
           )}
         </div>
         <div className="flex-[0.55]">

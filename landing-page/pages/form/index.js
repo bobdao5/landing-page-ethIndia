@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import React, { useRef, useState } from "react";
+import { NftStorageHttpService } from "../api/nftStorage";
 
 const index = () => {
   const nameInputRef = useRef();
@@ -10,6 +11,7 @@ const index = () => {
   const linkedInInputRef = useRef();
   const githubInputRef = useRef();
   const [selectedFile, setSelectedFile] = useState();
+  const nftStorageHttpService = new NftStorageHttpService();
 
   const router = useRouter();
 
@@ -17,8 +19,12 @@ const index = () => {
     setSelectedFile(event.target.files[0]);
   };
 
-  const submitFormHandler = (event) => {
+  const submitFormHandler = async (event) => {
     event.preventDefault();
+
+    const response = await nftStorageHttpService.pinFileToIPFS(selectedFile);
+    console.log(response)
+
     console.log("Registered!");
 
     let enteredName = nameInputRef.current.value;
